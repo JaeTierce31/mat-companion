@@ -1,7 +1,8 @@
 import React from 'react';
 import {getClaimView} from './safety/claim.js';
 
-export function App({claimView = getClaimView()}) {
+export function App() {
+  const claimView = getClaimView();
   return (
     <main className="layout">
       <header>

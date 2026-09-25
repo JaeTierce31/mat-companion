@@ -13,8 +13,13 @@ it('the actual app hides the unreviewed medication claim by default', () => {
   expect(screen.queryByText(/Synthetic approved copy/i)).toBeNull();
 });
 
-it('a synthetic reviewed claim can be displayed with its source link', () => {
-  render(<App claimView={{status: 'approved', text: 'Synthetic approved copy for a test only.', sourceUrl: 'https://example.org/test'}} />);
-  expect(screen.getByText('Synthetic approved copy for a test only.')).toBeTruthy();
-  expect(screen.getByRole('link', {name: /View source label/i}).getAttribute('href')).toBe('https://example.org/test');
+it('does not accept caller-supplied approved content as a release decision', () => {
+  render(<App claimView={{
+    status: 'approved',
+    text: 'Synthetic approved copy for a test only.',
+    sourceUrl: 'https://example.org/test',
+  }} />);
+  expect(screen.getByRole('heading', {name: /Medication safety content under review/i})).toBeTruthy();
+  expect(screen.queryByText('Synthetic approved copy for a test only.')).toBeNull();
+  expect(screen.queryByRole('link', {name: /View source label/i})).toBeNull();
 });
