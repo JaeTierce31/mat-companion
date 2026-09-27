@@ -22,6 +22,7 @@ describe('MAT-CNS-001 release gate', () => {
   });
   it('rejects the superseded FDA revision', () => {
     expect(getClaimView([{...syntheticApproval, sourceRevision: 'FDA-METHADOSE-2023-12-REF-5294248'}]).status).toBe('blocked');
+    expect(getClaimView([{...syntheticApproval, sourceRevision: 'FDA-METHADOSE-2025-12-REF-5715751'}]).status).toBe('blocked');
   });
   it('allows a synthetic approved fixture on the exact source revision', () => {
     expect(getClaimView([syntheticApproval])).toMatchObject({status: 'approved', text: syntheticApproval.text});
