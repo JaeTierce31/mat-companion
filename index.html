@@ -4,10 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#eef4f3" />
+    <meta
+      name="description"
+      content="MAT Companion — a recovery support app in development. Safety content is under clinical review; no personal health information is collected."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23317b76'/%3E%3Cpath d='M16 7v18M7 16h18' stroke='%23eef4f3' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
     <title>MAT Companion</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="layout">
+        <p role="status">Loading MAT Companion…</p>
+      </main>
+    </div>
+    <noscript>
+      <main class="layout">
+        <h1>MAT Companion</h1>
+        <p>
+          This app needs JavaScript enabled to load. No personal health information is collected.
+        </p>
+        <p>If you feel unsafe, call emergency services, or call your local emergency number.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

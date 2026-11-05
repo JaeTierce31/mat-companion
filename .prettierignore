@@ -1,0 +1,14 @@
+# Generated / build output — never format these.
+coverage
+dist
+playwright-report
+test-results
+node_modules
+package-lock.json
+
+# Protected files: kept byte-identical on purpose. src/safety/claim.js is the
+# clinical release gate; tests/app.test.jsx and tests/claim.test.js are the
+# original fail-closed tests. Formatting them would only add diff noise.
+src/safety/claim.js
+tests/app.test.jsx
+tests/claim.test.js

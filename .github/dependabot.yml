@@ -1,0 +1,16 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the files can be found.
+# Documentation: https://docs.github.com/code-security/dependabot/working-with-dependabot
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    # Keep the safety-critical surface stable: patch-level bumps only for
+    # the app itself; major bumps (e.g. jsdom 30 -> 31) are reviewed by hand.
+    open-pull-requests-limit: 5
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
