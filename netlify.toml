@@ -1,0 +1,11 @@
+# Static hosting config for Netlify. No backend, no functions, no forms:
+# the app is a client-side Vite build served from dist/.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
