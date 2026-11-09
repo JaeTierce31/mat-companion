@@ -1,7 +1,11 @@
 // Release entries must be reviewed and committed; there is no patient-supplied approval path.
 export const CLAIM_ID = 'MAT-CNS-001';
-export const SOURCE_REVISION = 'FDA-METHADOSE-2025-12-REF-5715751';
-export const SOURCE_URL = 'https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/017116s048lbl.pdf';
+// DailyMed's METHADOSE set 808a9d0b-720b-4034-a862-5122ff514608,
+// version 41 (revised April 2026; published May 1, 2026).
+export const SOURCE_REVISION = 'DAILYMED-METHADOSE-808A9D0B-720B-4034-A862-5122FF514608-V41';
+// This page follows the latest label. The version-41 archive is
+// recorded in docs/MAT-CNS-001.md; recheck the displayed source before release.
+export const SOURCE_URL = 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=808a9d0b-720b-4034-a862-5122ff514608';
 
 // Empty until an actual qualified reviewer approves exact wording and a later PR releases it.
 export const RELEASED_CLAIMS = Object.freeze([]);
